@@ -28,4 +28,10 @@ jobs:
         with:
           node-version: '14'
       - run: npm install
+        continue-on-error: true
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: Failure log
+          path: /home/runner/.npm/_logs/*
 
